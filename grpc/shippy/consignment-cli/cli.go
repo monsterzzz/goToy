@@ -33,7 +33,8 @@ func main() {
 
 	client := proto.NewShippingServiceClient(conn)
 
-	info := "grpc/shippy/consignment-cli/consignment.json"
+	//info := "grpc/shippy/consignment-cli/consignment.json"
+	info := "consignment.json"
 	consignment, err := ParseFile(info)
 	if err != nil {
 		log.Fatal("111")

@@ -1,7 +1,9 @@
 <component name="ProjectDictionaryState">
   <dictionary name="monster">
     <words>
+      <w>grpc</w>
       <w>mozilla</w>
+      <w>protoc</w>
       <w>referrerpolicy</w>
       <w>resq</w>
       <w>sprintf</w>
