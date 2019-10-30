@@ -1,9 +1,12 @@
 <component name="ProjectDictionaryState">
   <dictionary name="monster">
     <words>
+      <w>abcdefghijklmnopqrstuvwxyz</w>
+      <w>defang</w>
       <w>grpc</w>
       <w>mget</w>
       <w>mozilla</w>
+      <w>paddr</w>
       <w>protoc</w>
       <w>referrerpolicy</w>
       <w>resq</w>
