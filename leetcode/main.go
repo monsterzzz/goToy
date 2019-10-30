@@ -1,28 +1,13 @@
 package main
 
-import "goToy/leetcode/easy"
+import (
+	"fmt"
+	"goToy/leetcode/easy"
+)
 
 func main() {
-	n1 := easy.ListNode{
-		Val: 1,
-		Next: &easy.ListNode{
-			Val: 2,
-			Next: &easy.ListNode{
-				Val:  4,
-				Next: nil,
-			},
-		},
-	}
-	n2 := easy.ListNode{
-		Val: 1,
-		Next: &easy.ListNode{
-			Val: 3,
-			Next: &easy.ListNode{
-				Val:  4,
-				Next: nil,
-			},
-		},
-	}
 
-	easy.MergeTwoLists(&n1, &n2)
+	a := []int{0, 1, 0, 3, 12}
+	easy.MoveZeroes(a)
+	fmt.Println(a)
 }
