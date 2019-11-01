@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 func main() {
-	var s []string
-	for _, v := range fmt.Sprintf("%b", uint32(4)) {
-		s = append(s, string(v))
+	n := 3
+	initQue := []int{1, 2}
+	for i := 2; i < n; i++ {
+		initQue = append(initQue, initQue[i-1]+initQue[i-2])
 	}
-	fmt.Println(strings.Join(s, ""))
+	fmt.Println(initQue[n-1])
 }
