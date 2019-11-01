@@ -1,14 +1,19 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	n := 3
-	initQue := []int{1, 2}
-	for i := 2; i < n; i++ {
-		initQue = append(initQue, initQue[i-1]+initQue[i-2])
+	nums := []int{3, 2, 4}
+	target := 6
+	m := make(map[int]int)
+	for i, v := range nums {
+		m[v] = i
 	}
-	fmt.Println(initQue[n-1])
+	for k, v := range nums {
+		if _, ok := m[target-v]; ok && m[target-v] != k {
+			return []int{k, m[target-v]}
+		}
+	}
+	_, ok := m[2]
+	fmt.Println(ok)
 }
