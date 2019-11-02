@@ -4,27 +4,28 @@ import "fmt"
 
 func main() {
 
-	numRows := 5
+	//digits1 := []int{1,2,3}
+	digits := []int{9}
 
-	//if numRows == 1 {
-	//	return [][]int{{1}}
-	//}else if numRows == 2{
-	//	return [][]int{{1},{1,1}}
-	//}else if numRows == 0{
-	//	return [][]int{}
-	//}
+	/*
 
-	var res = [][]int{{1}, {1, 1}}
-	for i := 2; i < numRows; i++ {
-		tmp := make([]int, len(res[i-1])+1)
-		tmp[0] = 1
-		tmp[len(tmp)-1] = 1
-		for j := 1; j < len(res[i-1]); j++ {
-			cur := res[i-1][j-1] + res[i-1][j]
-			tmp[j] = cur
+		如果当前位加一不等于10,那么直接返回
+		如果等于10
+			把当前位取0
+			如果当前位还是首位 那么在首位加1
+
+	*/
+
+	for i := len(digits) - 1; i >= 0; i-- {
+		digits[i] += 1
+		if digits[i] != 10 {
+			break
 		}
-		res = append(res, tmp)
-	}
-	fmt.Println(res)
+		digits[i] = 0
+		if i == 0 {
+			digits = append([]int{1}, digits...)
+		}
 
+	}
+	fmt.Println(digits)
 }
