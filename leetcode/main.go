@@ -1,19 +1,30 @@
 package main
 
-import (
-	"goToy/leetcode/easy"
-)
+import "fmt"
 
 func main() {
 
-	head := &easy.ListNode{Val: 3}
-	l1 := &easy.ListNode{Val: 2}
-	l2 := &easy.ListNode{Val: 0}
-	l3 := &easy.ListNode{Val: -4}
+	numRows := 5
 
-	head.Next = l1
-	l1.Next = l2
-	l2.Next = l3
-	l3.Next = l1
+	//if numRows == 1 {
+	//	return [][]int{{1}}
+	//}else if numRows == 2{
+	//	return [][]int{{1},{1,1}}
+	//}else if numRows == 0{
+	//	return [][]int{}
+	//}
+
+	var res = [][]int{{1}, {1, 1}}
+	for i := 2; i < numRows; i++ {
+		tmp := make([]int, len(res[i-1])+1)
+		tmp[0] = 1
+		tmp[len(tmp)-1] = 1
+		for j := 1; j < len(res[i-1]); j++ {
+			cur := res[i-1][j-1] + res[i-1][j]
+			tmp[j] = cur
+		}
+		res = append(res, tmp)
+	}
+	fmt.Println(res)
 
 }
